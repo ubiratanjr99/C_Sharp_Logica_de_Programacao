@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 
 public class LogicaModulo_2
 {
@@ -33,6 +34,52 @@ public class LogicaModulo_2
             {
                 Console.Write($"{caracter} ");
             }
+        }
+    }
+    public static void CaixaEletronico(int saque)
+    {
+        Console.WriteLine($"Para o saque de R${saque} você terá as seguintes cédulas:");
+
+        int notas_100 = saque / 100;
+        saque = saque % 100;
+
+        int notas_50 = saque / 50;
+        saque = saque % 50;
+
+        int notas_20 = saque / 20;
+        saque = saque % 20;
+
+        int notas_10 = saque / 10;
+        saque = saque % 10;
+
+        int notas_5 = saque / 5;
+        saque = saque % 5;
+
+        int notas_2 = saque / 2;
+
+        if (notas_100 > 0)
+        {
+            Console.WriteLine($"{notas_100} de R$100");
+        }
+        if (notas_50 > 0)
+        {
+            Console.WriteLine($"{notas_50} de R$50");
+        }
+        if (notas_20 > 0)
+        {
+            Console.WriteLine($"{notas_20} de R$20");
+        }
+        if (notas_10 > 0)
+        {
+            Console.WriteLine($"{notas_10} de R$10");
+        }
+        if (notas_5 > 0)
+        {
+            Console.WriteLine($"{notas_5} de R$5");
+        }
+        if (notas_2 > 0) 
+        {
+            Console.WriteLine($"{notas_2} de R$2");
         }
     }
 }
