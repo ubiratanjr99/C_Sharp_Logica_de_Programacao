@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml;
 
 public class LogicaModulo_2
 {
@@ -33,6 +34,22 @@ public class LogicaModulo_2
             {
                 Console.Write($"{caracter} ");
             }
+        }
+    }
+    public static void CaixaEletronico(int saque)
+    {
+        Dictionary<int, int> notas = new Dictionary<int, int>();
+
+        List<int> cedulas = new List<int>() { 100, 50, 20, 10, 5, 2 };
+
+        int deducao = saque;
+
+        foreach(int cedula in cedulas)
+        {
+            int qtd_notas = saque / cedula;
+            int resto = saque % cedula;
+
+            Console.WriteLine($"{qtd_notas} de {cedula}: {resto}");
         }
     }
 }
