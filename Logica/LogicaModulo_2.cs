@@ -2,7 +2,39 @@
 
 public class LogicaModulo_2
 {
+    public static void ValidadorCPF()
+    {
+        string cpf = "123.156.789-00";
+        cpf = cpf.Replace(".", "").Replace("-","");
+        List<char> digito_invalido = new List<char>();
+        List<char> numeros = new List<char>() { '1','2','3','4','5','6','7','8','9','0' };
 
+        foreach(char numero in cpf)
+        {
+            if (!numeros.Contains(numero))
+            {
+                digito_invalido.Add(numero);
+            }
+        }
+
+        if (digito_invalido.Count == 0)
+        {
+            Console.WriteLine("CPF válido!");
+        }
+        else if (cpf.Length > 11)
+        {
+            Console.WriteLine("CPF inválido!\nDigite um CPF que contenha apenas 11 dígitos.\n");
+        }
+        else
+        {
+            Console.WriteLine($"CPF inválido! Os caracteres a seguir estão errados:");
+            Console.Write("Inválido: ");
+            foreach (char caracter in digito_invalido)
+            {
+                Console.Write($"{caracter} ");
+            }
+        }
+    }
 }
 
 /*
